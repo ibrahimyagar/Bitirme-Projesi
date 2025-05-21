@@ -1,0 +1,87 @@
+﻿@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Giriş Yap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="text-center mb-0">@ViewData["Title"]</h3>
+                </div>
+                <div class="card-body">
+                    <form id="account" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                        <div class="mb-3">
+                            <label asp-for="Input.Email" class="form-label">E-posta</label>
+                            <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="ornek@email.com">
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Input.Password" class="form-label">Şifre</label>
+                            <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Şifre">
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input class="form-check-input" asp-for="Input.RememberMe">
+                            <label class="form-check-label" asp-for="Input.RememberMe">
+                                @Html.DisplayNameFor(m => m.Input.RememberMe)
+                            </label>
+                        </div>
+                        <button id="login-submit" type="submit" class="btn btn-primary w-100">Giriş Yap</button>
+                        <div class="mt-3 text-center">
+                            <p>
+                                <a id="forgot-password" asp-page="./ForgotPassword">Şifremi Unuttum</a>
+                            </p>
+                            <p>
+                                Hesabınız yok mu? <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Kayıt Olun</a>
+                            </p>
+                        </div>
+                       <style>
+    body {
+        background-image: url('/images/170509142-e-learning-education-internet-webinar-online-courses-concept.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-52%, -52%);
+    }
+</style>
+                    </form>
+                </div>
+            </div>
+        </div>
+        @if ((Model.ExternalLogins?.Count ?? 0) > 0)
+        {
+            <div class="col-md-6">
+                <div class="card mt-3 mt-md-0">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="text-center mb-0">Dış Servis ile Giriş Yapın</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                            @foreach (var provider in Model.ExternalLogins!)
+                            {
+                                <button type="submit" class="btn btn-secondary w-100 mb-2" name="provider" value="@provider.Name" title="@provider.DisplayName hesabınızla giriş yapın">@provider.DisplayName ile Giriş Yapın</button>
+                            }
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
