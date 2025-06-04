@@ -1,7 +1,6 @@
 using Classroom.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-
 namespace Classroom
 {
     public class Program
@@ -19,6 +18,7 @@ namespace Classroom
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
+           
 
             var app = builder.Build();
 
@@ -45,6 +45,7 @@ namespace Classroom
                 name: "default",
                 pattern: "{controller=Hello}/{action=Index}/{id?}");
             app.MapRazorPages();
+            app.MapHub<WebRtcHub>("/webrtchub");
 
             app.Run();
         }

@@ -88,6 +88,8 @@ namespace Classroom.Controllers
 
             ViewBag.NearestHomework = nearestHomework;
 
+            ViewBag.UserName = User.Identity.IsAuthenticated ? User.Identity.Name : "Misafir";
+
             return View(selectedClassroom);
         }
 
@@ -151,6 +153,7 @@ namespace Classroom.Controllers
                 .OrderBy(a => a.Id) // Duyuruları duyuru ID'sine göre azalan şekilde sıralar
                 .ToList();
 
+           
 
             return View("Index", selectedClassroom);
         }
@@ -208,7 +211,7 @@ namespace Classroom.Controllers
 
             // siniftan silme
             var cu = db.ClassUser.FirstOrDefault(cu => cu.ApplicationUserId == userId && cu.ClassRoomId == classroomId && !cu.IsDelete);
-            cu.IsDelete = true; 
+            cu.IsDelete = true;
             db.ClassUser.Update(cu);
             db.SaveChanges();
 
@@ -301,12 +304,12 @@ namespace Classroom.Controllers
             {
                 return Forbid();
             }
-            
+
             var ClassUser = db.ClassUser.FirstOrDefault(cu => cu.ClassRoomId == id && cu.ApplicationUserId == userId);
             ClassUser.IsDelete = true;
             db.ClassUser.Update(ClassUser);
             db.SaveChanges();
-            
+
             return RedirectToAction("Index", "Home");
         }
 
@@ -318,7 +321,7 @@ namespace Classroom.Controllers
             }
 
             var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if(!(db.Announcements.Any(a => a.ApplicationUserId == currentUserId && a.Id == announcementsId) || db.ClassUser.Any(cu => cu.ApplicationUserId == currentUserId && cu.ClassRoomId == classroomId && cu.Roles)))
+            if (!(db.Announcements.Any(a => a.ApplicationUserId == currentUserId && a.Id == announcementsId) || db.ClassUser.Any(cu => cu.ApplicationUserId == currentUserId && cu.ClassRoomId == classroomId && cu.Roles)))
             {
                 return NotFound();
             }

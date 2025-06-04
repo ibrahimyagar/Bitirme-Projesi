@@ -1,3 +1,5 @@
+import sdk from '@stackblitz/sdk';
+
 const menuToggle = document.getElementById('menu-toggle');
 const sidebar = document.getElementById('sidebar');
 const mainContent = document.getElementById('main-content'); //indexte
@@ -29,3 +31,13 @@ document.addEventListener('click', (e) => {
         addMenu.classList.remove('show');
     }
 });
+
+// StackBlitz editörünü sayfada gömmek için fonksiyon
+window.embedStackBlitz = function () {
+    sdk.embedProjectId('stackblitz-embed', 'js-e3jv9u', {
+        height: 500,
+        openFile: 'index.js'
+    });
+    <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@7.0.5/dist/browser/signalr.min.js"></script>
+
+};

@@ -83,7 +83,7 @@ namespace Classroom.Controllers
                 return NotFound();
             }
 
-            if(!db.ClassUser.Any(cu => cu.ApplicationUserId == User.FindFirstValue(ClaimTypes.NameIdentifier) && cu.Roles))
+            if (!db.ClassUser.Any(cu => cu.ApplicationUserId == User.FindFirstValue(ClaimTypes.NameIdentifier) && cu.Roles))
             {
                 return Forbid();
             }
@@ -118,7 +118,7 @@ namespace Classroom.Controllers
 
             // boyle bi sinif var mi
             var selectedClassroom = db.ClassRoom.FirstOrDefault(c => c.Id == id && c.IsActive && !c.IsDelete);
-			if (selectedClassroom == null)
+            if (selectedClassroom == null)
             {
                 return NotFound();
             }
@@ -216,7 +216,7 @@ namespace Classroom.Controllers
                 return Forbid();
             }
 
-            if(selectedHomework.DueDate < DateTime.Now)
+            if (selectedHomework.DueDate < DateTime.Now)
             {
                 return Forbid();
             }
@@ -226,7 +226,8 @@ namespace Classroom.Controllers
 
         // ogreninin odev ekleme yapmasi
         [HttpPost]
-        public IActionResult AddHomework(int HomeworkId, int ClassroomId, string HwText) {
+        public IActionResult AddHomework(int HomeworkId, int ClassroomId, string HwText)
+        {
             if (HomeworkId == null || ClassroomId == null || HwText == null)
             {
                 return NotFound();
@@ -240,12 +241,12 @@ namespace Classroom.Controllers
                 return Forbid();
             }
 
-            if(!db.HomeworkUser.Any(hu => hu.HomeworkId == HomeworkId && hu.ApplicationUserId == userId))
+            if (!db.HomeworkUser.Any(hu => hu.HomeworkId == HomeworkId && hu.ApplicationUserId == userId))
             {
                 return Forbid();
             }
 
-            if(db.Homework.FirstOrDefault(h => h.Id == HomeworkId).DueDate < DateTime.Now)
+            if (db.Homework.FirstOrDefault(h => h.Id == HomeworkId).DueDate < DateTime.Now)
             {
                 return Forbid();
             }
@@ -268,12 +269,14 @@ namespace Classroom.Controllers
 
             // Bu kullanici bu sinifta var mi eger var ise rolu ogretmen mi
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (!db.ClassUser.Any(cu => cu.ClassRoomId == ClassroomId && cu.ApplicationUserId == userId && cu.Roles)) {
+            if (!db.ClassUser.Any(cu => cu.ClassRoomId == ClassroomId && cu.ApplicationUserId == userId && cu.Roles))
+            {
                 return Forbid();
             }
 
             //homework classroom kontrrol
-            if(!db.Homework.Any(h => h.ClassRoomId == ClassroomId && h.Id == HomeworkId)) {
+            if (!db.Homework.Any(h => h.ClassRoomId == ClassroomId && h.Id == HomeworkId))
+            {
                 return NotFound();
             }
 

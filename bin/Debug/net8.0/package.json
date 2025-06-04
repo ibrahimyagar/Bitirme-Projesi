@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@stackblitz/sdk": "^1.11.0"
+  }
+}
