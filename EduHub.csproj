@@ -5,6 +5,8 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-EduHub-b8d786a4-77a1-4db1-863a-d416a3d47977</UserSecretsId>
+    <AssemblyName>EduHub</AssemblyName>
+    <RootNamespace>EduHub</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
