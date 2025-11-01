@@ -1,0 +1,76 @@
+﻿@model JoinClassRoomModel
+@{
+    Layout = "_Layout2";
+    ViewData["Title"] = "Sınıfa Katıl";
+}
+@section CSSSection {
+    <style>
+        .class-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .container {
+            margin-left: 250px;
+        }
+    </style>
+}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Sınıfa Katıl</h4>
+                </div>
+                <div class="card-body">
+                    <p>Şu anda e-posta adresinizle giriş yaptınız: @User.Identity?.Name</p>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="class-avatar" style="background-color: #43a047;">@ViewBag.ApplicationUser.Name[0]</div>
+                        <div class="ms-2">@ViewBag.ApplicationUser.Name @ViewBag.ApplicationUser.Surname</div>
+                    </div>
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="alert alert-danger small">
+                            @Html.ValidationSummary(false)
+                        </div>
+                    }
+                    <form method="post" id="joinClassForm">
+                        <div class="mb-3">
+                            <label for="sinifKodu" class="form-label">Sınıf Kodu:</label>
+                            <input asp-for="ClassRoomUnicCode" type="text" class="form-control" id="sinifKodu" placeholder="Öğretmeninizden aldığınız sınıf kodunu buraya girin.">
+                        </div>
+                        <p>Sınıfa bu kod ile katılmak için:</p>
+                        <ul>
+                            <li>Geçerli bir hesap kullanın</li>
+                            <li>Boşluk veya sembol içermeyen, 7 harf veya rakamdan oluşan bir sınıf kodu kullanın</li>
+                        </ul>
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-outline-primary me-2">İptal</button>
+                            <button type="submit" class="btn btn-primary" id="joinButton" disabled>Katıl</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const sinifKoduInput = document.getElementById('sinifKodu');
+    const joinButton = document.getElementById('joinButton');
+
+    sinifKoduInput.addEventListener('input', () => {
+        if (sinifKoduInput.value.length === 7) {
+            joinButton.disabled = false;
+        } else {
+            joinButton.disabled = true;
+        }
+    });
+</script>

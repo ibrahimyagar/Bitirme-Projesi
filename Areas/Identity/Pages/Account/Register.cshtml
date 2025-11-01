@@ -1,0 +1,93 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Kayıt Ol";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ <style>
+    body {
+        background-image: url('/images/170509142-e-learning-education-internet-webinar-online-courses-concept.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-52%, -52%);
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="text-center mb-0">@ViewData["Title"]</h3>
+                </div>
+                <div class="card-body">
+                    <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                        <div class="mb-3">
+                            <label asp-for="Input.Name" class="form-label">Ad</label>
+                            <input asp-for="Input.Name" class="form-control" autocomplete="name" aria-required="true" placeholder="Adınızı Girin">
+                            <span asp-validation-for="Input.Name" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Input.Surname" class="form-label">Soyad</label>
+                            <input asp-for="Input.Surname" class="form-control" autocomplete="surname" aria-required="true" placeholder="Soyadınızı Girin">
+                            <span asp-validation-for="Input.Surname" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Input.Email" class="form-label">E-posta</label>
+                            <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="ornek@email.com">
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Input.Password" class="form-label">Şifre</label>
+                            <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Şifre">
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Input.ConfirmPassword" class="form-label">Şifreyi Onayla</label>
+                            <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Şifreyi Onayla">
+                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                        </div>
+                        <button id="registerSubmit" type="submit" class="btn btn-primary w-100">Kayıt Ol</button>
+                    </form>
+                    <hr>
+                    <div class="text-center">
+                        Zaten bir hesabınız var mı? <a href="/Identity/Account/Login">Giriş Yap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if ((Model.ExternalLogins?.Count ?? 0) > 0)
+        {
+            <div class="col-md-6">
+                <div class="card mt-3 mt-md-0">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="text-center mb-0">Dış Servis ile Kayıt Ol</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                            @foreach (var provider in Model.ExternalLogins!)
+                            {
+                                <button type="submit" class="btn btn-secondary w-100 mb-2" name="provider" value="@provider.Name" title="Hesabınızla kayıt olun">@provider.DisplayName ile Kayıt Ol</button>
+                            }
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
