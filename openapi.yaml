@@ -1,0 +1,417 @@
+openapi: 3.0.3
+info:
+  title: Classroom API
+  description: |
+    Classroom Sınıf Yönetim Sistemi API Dokümantasyonu
+    
+    Bu API, öğretmenler ve öğrenciler için sınıf yönetim işlemlerini sağlar.
+    Tüm endpoint'ler kimlik doğrulama gerektirir (ASP.NET Core Identity).
+  version: 1.0.0
+  contact:
+    name: Classroom Support
+    email: support@classroom.example.com
+
+servers:
+  - url: https://api.classroom.example.com
+    description: Production server
+  - url: http://localhost:5057
+    description: Development server
+
+tags:
+  - name: Classroom
+    description: Sınıf yönetimi işlemleri
+  - name: Homework
+    description: Ödev yönetimi işlemleri
+  - name: Announcements
+    description: Duyuru yönetimi işlemleri
+  - name: Comments
+    description: Yorum işlemleri
+  - name: Users
+    description: Kullanıcı işlemleri
+
+paths:
+  /Classroom:
+    get:
+      tags:
+        - Classroom
+      summary: Kullanıcının sınıflarını listele
+      description: Giriş yapmış kullanıcının aktif sınıflarını döndürür
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Başarılı
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ClassRoom'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+
+  /Classroom/{id}:
+    get:
+      tags:
+        - Classroom
+      summary: Sınıf detaylarını getir
+      description: Belirtilen ID'ye sahip sınıfın detaylarını döndürür
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Sınıf ID'si
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Başarılı
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClassRoomDetail'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+
+  /Home/CreateClassRoom:
+    post:
+      tags:
+        - Classroom
+      summary: Yeni sınıf oluştur
+      description: Öğretmen olarak yeni bir sınıf oluşturur
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateClassRoomRequest'
+      responses:
+        '201':
+          description: Sınıf başarıyla oluşturuldu
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClassRoom'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+
+  /Home/JoinClassRoom:
+    post:
+      tags:
+        - Classroom
+      summary: Sınıfa katıl
+      description: Benzersiz kod ile bir sınıfa öğrenci olarak katılır
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JoinClassRoomRequest'
+      responses:
+        '200':
+          description: Başarıyla sınıfa katıldı
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+
+  /Homework/CreateHomework:
+    post:
+      tags:
+        - Homework
+      summary: Ödev oluştur
+      description: Bir sınıf için yeni ödev oluşturur (sadece öğretmen)
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateHomeworkRequest'
+      responses:
+        '201':
+          description: Ödev başarıyla oluşturuldu
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+
+  /Homework/AddHomework:
+    post:
+      tags:
+        - Homework
+      summary: Ödev gönder
+      description: Öğrenci ödevini gönderir (dosya veya metin)
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                HomeworkId:
+                  type: integer
+                ClassroomId:
+                  type: integer
+                HwText:
+                  type: string
+                HomeworkFile:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Ödev başarıyla gönderildi
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+
+  /Classroom/Announcements:
+    post:
+      tags:
+        - Announcements
+      summary: Duyuru ekle
+      description: Sınıfa yeni duyuru ekler
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                announcements:
+                  type: string
+                classroomId:
+                  type: integer
+      responses:
+        '200':
+          description: Duyuru başarıyla eklendi
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+
+  /Comment/AddComment:
+    post:
+      tags:
+        - Comments
+      summary: Yorum ekle
+      description: Bir duyuruya yorum ekler
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                AnnouncementId:
+                  type: integer
+                ClassroomId:
+                  type: integer
+                description:
+                  type: string
+      responses:
+        '200':
+          description: Yorum başarıyla eklendi
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: ASP.NET Core Identity Cookie Authentication
+
+  schemas:
+    ClassRoom:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Sınıf ID'si
+        name:
+          type: string
+          description: Sınıf adı
+        description:
+          type: string
+          description: Sınıf açıklaması
+        unicCode:
+          type: string
+          description: Benzersiz sınıf kodu
+        color:
+          type: string
+          format: hex-color
+          description: Sınıf rengi (hex)
+        isActive:
+          type: boolean
+          description: Sınıf aktif mi?
+
+    ClassRoomDetail:
+      allOf:
+        - $ref: '#/components/schemas/ClassRoom'
+        - type: object
+          properties:
+            announcements:
+              type: array
+              items:
+                $ref: '#/components/schemas/Announcement'
+            homeworks:
+              type: array
+              items:
+                $ref: '#/components/schemas/Homework'
+            teachers:
+              type: array
+              items:
+                $ref: '#/components/schemas/User'
+            students:
+              type: array
+              items:
+                $ref: '#/components/schemas/User'
+
+    CreateClassRoomRequest:
+      type: object
+      required:
+        - name
+        - description
+      properties:
+        name:
+          type: string
+          example: "Matematik 101"
+        description:
+          type: string
+          example: "Temel matematik dersi"
+
+    JoinClassRoomRequest:
+      type: object
+      required:
+        - classRoomUnicCode
+      properties:
+        classRoomUnicCode:
+          type: string
+          example: "ABC1234"
+
+    CreateHomeworkRequest:
+      type: object
+      required:
+        - questionTitle
+        - description
+        - dueDateTime
+        - classroomId
+      properties:
+        questionTitle:
+          type: string
+          example: "Limit ve Süreklilik"
+        description:
+          type: string
+          example: "Sayfa 45-50 arasındaki soruları çözün"
+        dueDateTime:
+          type: string
+          format: date-time
+          example: "2024-02-15T23:59:59"
+        classroomId:
+          type: integer
+          example: 1
+
+    Homework:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        dueDate:
+          type: string
+          format: date-time
+        point:
+          type: integer
+          description: Öğrenci için not (-1 = değerlendirilmedi)
+
+    Announcement:
+      type: object
+      properties:
+        id:
+          type: integer
+        contents:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        applicationUser:
+          $ref: '#/components/schemas/User'
+
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        userName:
+          type: string
+        email:
+          type: string
+        name:
+          type: string
+        surname:
+          type: string
+
+  responses:
+    UnauthorizedError:
+      description: Kimlik doğrulama gerekli
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Unauthorized"
+
+    ForbiddenError:
+      description: Bu işlem için yetkiniz yok
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Forbidden"
+
+    NotFoundError:
+      description: İstenen kaynak bulunamadı
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Not Found"
+
+    BadRequestError:
+      description: Geçersiz istek
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+              errors:
+                type: object
+

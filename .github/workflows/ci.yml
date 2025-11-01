@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore
+      working-directory: ./Classroom
+
+    - name: Build
+      run: dotnet build --no-restore --configuration Release
+      working-directory: ./Classroom
+
+    - name: Run tests
+      run: dotnet test --no-build --configuration Release --verbosity normal
+      working-directory: ./Classroom
+      continue-on-error: true  # Testler henüz yoksa başarısız olmasın
+
+    - name: Publish
+      run: dotnet publish --no-build --configuration Release --output ./publish
+      working-directory: ./Classroom
+
+  lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Install analyzers
+      run: dotnet tool install --global dotnet-format || true
+
+    - name: Check code formatting
+      run: dotnet format --verify-no-changes --verbosity diagnostic
+      working-directory: ./Classroom
+      continue-on-error: true
+

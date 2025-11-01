@@ -1,0 +1,225 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|c:\\users\\yafes\\desktop\\bitirmeodevim\\classroom\\controllers\\homeworkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|solutionrelative:controllers\\homeworkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|c:\\users\\yafes\\desktop\\bitirmeodevim\\classroom\\views\\homework\\homeworklist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|solutionrelative:views\\homework\\homeworklist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|c:\\users\\yafes\\desktop\\bitirmeodevim\\classroom\\views\\homework\\addhomework.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|solutionrelative:views\\homework\\addhomework.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|c:\\users\\yafes\\desktop\\bitirmeodevim\\classroom\\views\\homework\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|solutionrelative:views\\homework\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|c:\\users\\yafes\\desktop\\bitirmeodevim\\classroom\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|c:\\users\\yafes\\desktop\\bitirmeodevim\\classroom\\views\\homework\\teachindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|solutionrelative:views\\homework\\teachindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|c:\\users\\yafes\\desktop\\bitirmeodevim\\classroom\\views\\classroom\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|solutionrelative:views\\classroom\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|c:\\users\\yafes\\desktop\\bitirmeodevim\\classroom\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|c:\\users\\yafes\\desktop\\bitirmeodevim\\classroom\\views\\hello\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|solutionrelative:views\\hello\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|c:\\users\\yafes\\desktop\\bitirmeodevim\\classroom\\views\\shared\\_layout2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|solutionrelative:views\\shared\\_layout2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|c:\\users\\yafes\\desktop\\bitirmeodevim\\classroom\\views\\hello\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|solutionrelative:views\\hello\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|c:\\users\\yafes\\desktop\\bitirmeodevim\\classroom\\views\\homework\\createhomework.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77B3DE48-FDFA-47D3-861F-4FF1CA819056}|Classroom.csproj|solutionrelative:views\\homework\\createhomework.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeworkController.cs",
+              "DocumentMoniker": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Controllers\\HomeworkController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeworkController.cs",
+              "ToolTip": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Controllers\\HomeworkController.cs",
+              "RelativeToolTip": "Controllers\\HomeworkController.cs",
+              "ViewState": "AgIAABQBAAAAAAAAAADwv0cBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T01:23:20.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAgwNkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T01:21:37.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddHomework.cshtml",
+              "DocumentMoniker": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Views\\Homework\\AddHomework.cshtml",
+              "RelativeDocumentMoniker": "Views\\Homework\\AddHomework.cshtml",
+              "ToolTip": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Views\\Homework\\AddHomework.cshtml",
+              "RelativeToolTip": "Views\\Homework\\AddHomework.cshtml",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAiwHQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-19T01:12:16.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TeachIndex.cshtml",
+              "DocumentMoniker": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Views\\Homework\\TeachIndex.cshtml",
+              "RelativeDocumentMoniker": "Views\\Homework\\TeachIndex.cshtml",
+              "ToolTip": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Views\\Homework\\TeachIndex.cshtml",
+              "RelativeToolTip": "Views\\Homework\\TeachIndex.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-19T01:06:18.891Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Views\\Classroom\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Classroom\\Index.cshtml",
+              "ToolTip": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Views\\Classroom\\Index.cshtml",
+              "RelativeToolTip": "Views\\Classroom\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-18T14:21:16.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Views\\Homework\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Homework\\Index.cshtml",
+              "ToolTip": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Views\\Homework\\Index.cshtml",
+              "RelativeToolTip": "Views\\Homework\\Index.cshtml",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAiwJ4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-18T21:11:46.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeworkList.cshtml",
+              "DocumentMoniker": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Views\\Homework\\HomeworkList.cshtml",
+              "RelativeDocumentMoniker": "Views\\Homework\\HomeworkList.cshtml",
+              "ToolTip": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Views\\Homework\\HomeworkList.cshtml",
+              "RelativeToolTip": "Views\\Homework\\HomeworkList.cshtml",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAIwM4AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-18T21:11:22.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CreateHomework.cshtml",
+              "DocumentMoniker": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Views\\Homework\\CreateHomework.cshtml",
+              "RelativeDocumentMoniker": "Views\\Homework\\CreateHomework.cshtml",
+              "ToolTip": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Views\\Homework\\CreateHomework.cshtml",
+              "RelativeToolTip": "Views\\Homework\\CreateHomework.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAwwEsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-18T21:10:25.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_Layout2.cshtml",
+              "DocumentMoniker": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Views\\Shared\\_Layout2.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout2.cshtml",
+              "ToolTip": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Views\\Shared\\_Layout2.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout2.cshtml",
+              "ViewState": "AgIAAJoBAAAAAAAAAADwv64BAACGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-18T13:31:51.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAgwKkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-18T11:08:12.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Views\\Hello\\Detail.cshtml",
+              "RelativeDocumentMoniker": "Views\\Hello\\Detail.cshtml",
+              "ToolTip": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Views\\Hello\\Detail.cshtml",
+              "RelativeToolTip": "Views\\Hello\\Detail.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcCAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-18T10:52:11.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Views\\Hello\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Hello\\Index.cshtml",
+              "ToolTip": "C:\\Users\\yafes\\Desktop\\bitirmeOdevim\\Classroom\\Views\\Hello\\Index.cshtml",
+              "RelativeToolTip": "Views\\Hello\\Index.cshtml",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAAACEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-18T10:29:26.882Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
