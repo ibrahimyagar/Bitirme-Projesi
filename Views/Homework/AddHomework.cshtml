@@ -1,8 +1,8 @@
-ï»¿@model Homework
+@model Homework
 @using System.Globalization;
 @{
     Layout = "_Layout2";
-    ViewData["Title"] = "Ã–dev Ekle";
+    ViewData["Title"] = "Ödev Ekle";
 }
 
 <div class="container mt-5">
@@ -35,12 +35,12 @@
 </div>
 
 <div class="container mt-5">
-    <h1 class="mb-4">Ã–dev Ekle</h1>
+    <h1 class="mb-4">Ödev Ekle</h1>
     <form method="post" class="form" asp-action="AddHomework" asp-route-ClassroomId="@Model.ClassRoom.Id" asp-route-HomeworkId="@Model.Id">
         <div class="mb-3">
-            <label for="homework-description" class="form-label">Ã–deviniz</label>
+            <label for="homework-description" class="form-label">Ödeviniz</label>
             <textarea name="HwText" class="form-control" id="homework-description" rows="3" required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Ã–devi GÃ¶nder</button>
+        <button type="submit" class="btn btn-primary">Ödevi Gönder</button>
     </form>
 </div>

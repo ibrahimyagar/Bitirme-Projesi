@@ -1,4 +1,4 @@
-ï»¿@model ClassRoom
+@model ClassRoom
 @using System.Globalization;
 @{
     Layout = "_Layout2";
@@ -114,20 +114,20 @@
 
     <ul class="nav nav-tabs mb-3">
         <li class="nav-item">
-            <a class="nav-link active" href="#" data-target="content-stream">AkÄ±ÅŸ</a>
+            <a class="nav-link active" href="#" data-target="content-stream">Akýþ</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" data-target="content-classwork">SÄ±nÄ±f Ã‡alÄ±ÅŸmalarÄ±</a>
+            <a class="nav-link" href="#" data-target="content-classwork">Sýnýf Çalýþmalarý</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" data-target="content-people">KiÅŸiler</a>
+            <a class="nav-link" href="#" data-target="content-people">Kiþiler</a>
         </li>
     </ul>
 
     @if (!Model.IsActive)
     {
         <div class="card text-center fs-5 mb-4" style="background-color:#adb5bd">
-            Ders, Ã–ÄŸretmeniniz tarafÄ±ndan arÅŸivlendi. Herhangi bir ekleme veya dÃ¼zenleme yapamazsÄ±nÄ±z.
+            Ders, Öðretmeniniz tarafýndan arþivlendi. Herhangi bir ekleme veya düzenleme yapamazsýnýz.
         </div>
     }
 
@@ -143,17 +143,17 @@
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                 @if (ViewBag.ApplicationUserRole && Model.IsActive)
                 {
-                    <li><a asp-action="ArchivedClassroom" asp-route-id="@Model.Id" class="dropdown-item">ArÅŸivle</a></li>
+                    <li><a asp-action="ArchivedClassroom" asp-route-id="@Model.Id" class="dropdown-item">Arþivle</a></li>
                     <li><a asp-action="DeleteClassroom" asp-route-id="@Model.Id" class="dropdown-item">Sil</a></li>
                 }
                 else if (ViewBag.ApplicationUserRole && !Model.IsActive)
                 {
-                    <li><a asp-action="UnarchivedClassroom" asp-route-id="@Model.Id" class="dropdown-item">ArÅŸivden Ã§Ä±kart</a></li>
+                    <li><a asp-action="UnarchivedClassroom" asp-route-id="@Model.Id" class="dropdown-item">Arþivden çýkart</a></li>
                     <li><a asp-action="DeleteClassroom" asp-route-id="@Model.Id" class="dropdown-item">Sil</a></li>
                 }
                 @if (Model.ApplicationUser.Id != ViewBag.ApplicationUser && Model.IsActive)
                 {
-                    <li><a asp-action="UnenrollClassroom" asp-route-id="@Model.Id" class="dropdown-item">kaydÄ± sil</a></li>
+                    <li><a asp-action="UnenrollClassroom" asp-route-id="@Model.Id" class="dropdown-item">kaydý sil</a></li>
                 }
             </ul>
         </div>
@@ -165,13 +165,13 @@
             <div class="col-md-3">
                 <div class="card mb-3">
                     <div class="card-body text-center">
-                        <h5 class="card-title" style="display:inline; margin-right: 10px;">SÄ±nÄ±f Kodu:</h5>
+                        <h5 class="card-title" style="display:inline; margin-right: 10px;">Sýnýf Kodu:</h5>
                         <h5 class="card-title" style="display:inline;">@Model.UnicCode</h5>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-body text-center">
-                        <h4 class="card-title">YaklaÅŸan Ã‡alÄ±ÅŸmalar</h4>
+                        <h4 class="card-title">Yaklaþan Çalýþmalar</h4>
                         <hr />
                         <p class="card-text">
                             @if (ViewBag.NearestHomework != null)
@@ -181,10 +181,10 @@
                             }
                             else
                             {
-                                <span>YaklaÅŸan Ã‡alÄ±ÅŸma yok</span>
+                                <span>Yaklaþan Çalýþma yok</span>
                             }
                         </p>
-                        <a id="viewAllButton" class="btn btn-outline-primary btn-sm">TÃ¼mÃ¼nÃ¼ GÃ¶rÃ¼ntÃ¼le</a>
+                        <a id="viewAllButton" class="btn btn-outline-primary btn-sm">Tümünü Görüntüle</a>
                     </div>
                 </div>
             </div>
@@ -196,12 +196,12 @@
                 {
                     <div class="card mb-3">
                         <div class="card-body">
-                            <h5 class="card-title">SÄ±nÄ±fÄ±na bir duyuru yap</h5>
+                            <h5 class="card-title">Sýnýfýna bir duyuru yap</h5>
                             <form asp-action="Announcements" method="post" class="form">
                                 <div class="input-group">
                                     <input type="hidden" name="classroomId" value="@Model.Id" />
-                                    <input name="announcements" type="text" class="form-control" placeholder="SÄ±nÄ±fÄ±nÄ±za duyuru yapÄ±n" aria-label="Duyuru metni">
-                                    <button class="btn btn-outline-secondary" type="submit">GÃ¶nder</button>
+                                    <input name="announcements" type="text" class="form-control" placeholder="Sýnýfýnýza duyuru yapýn" aria-label="Duyuru metni">
+                                    <button class="btn btn-outline-secondary" type="submit">Gönder</button>
                                 </div>
                             </form>
                         </div>
@@ -268,7 +268,7 @@
                             {
                                 <form asp-controller="Comment" asp-action="AddComment" asp-route-AnnouncementId="@item.Id" asp-route-ClassroomId="@Model.Id" class="form" method="post">
                                     <div class="d-flex align-items-center mt-3">
-                                        <input name="description" type="text" class="form-control" placeholder="SÄ±nÄ±fa yorum ekle...">
+                                        <input name="description" type="text" class="form-control" placeholder="Sýnýfa yorum ekle...">
                                         <button type="submit" class="btn btn-link"><i class="fas fa-paper-plane"></i></button>
                                     </div>
                                 </form>
@@ -278,8 +278,8 @@
                 }
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">BurasÄ± sÄ±nÄ±fÄ±nÄ±zla konuÅŸabileceÄŸiniz yerdir</h5>
-                        <p class="card-text">Duyuru paylaÅŸmak, Ã¶dev yayÄ±nlamak ve Ã¶ÄŸrenci sorularÄ±na yanÄ±t vermek iÃ§in akÄ±ÅŸÄ± kullanÄ±n</p>
+                        <h5 class="card-title">Burasý sýnýfýnýzla konuþabileceðiniz yerdir</h5>
+                        <p class="card-text">Duyuru paylaþmak, ödev yayýnlamak ve öðrenci sorularýna yanýt vermek için akýþý kullanýn</p>
                     </div>
                 </div>
             </div>
@@ -287,15 +287,15 @@
                 <div class="container">
                     @if (ViewBag.ApplicationUserRole && Model.IsActive)
                     {
-                        <a asp-controller="Homework" asp-action="CreateHomework" asp-route-id="@Model.Id" class="btn btn-primary btn-lg mb-3"><i class="fa-solid fa-plus"></i> OluÅŸtur</a>
+                        <a asp-controller="Homework" asp-action="CreateHomework" asp-route-id="@Model.Id" class="btn btn-primary btn-lg mb-3"><i class="fa-solid fa-plus"></i> Oluþtur</a>
                     }
                     @if (ViewBag.Homeworks.Count != 0)
                     {
-                        <h2 class="h3">SÄ±nÄ±f Ã‡alÄ±ÅŸmalarÄ±</h2>
+                        <h2 class="h3">Sýnýf Çalýþmalarý</h2>
                     }
                     else
                     {
-                        <h2 class="h4">Bu sÄ±nÄ±fÄ±n henÃ¼z herhangi bir sÄ±nÄ±f Ã§alÄ±ÅŸmasÄ± yok.</h2>
+                        <h2 class="h4">Bu sýnýfýn henüz herhangi bir sýnýf çalýþmasý yok.</h2>
                     }
                     <ul class="list-group">
                         @foreach (var item in ViewBag.Homeworks)
@@ -313,7 +313,7 @@
             </div>
             <div class="tab-content" id="content-people">
                 <div class="container">
-                    <h2 class="h3">Ã–ÄŸretmenler</h2>
+                    <h2 class="h3">Öðretmenler</h2>
                     <ul class="list-group mb-4">
                         @foreach (var item in ViewBag.Teachers)
                         {
@@ -323,7 +323,7 @@
                             </li>
                         }
                     </ul>
-                    <h2 class="h3">SÄ±nÄ±f ArkadaÅŸlarÄ± <small class="text-muted">(@ViewBag.Students.Count Ã¶ÄŸrenci)</small></h2>
+                    <h2 class="h3">Sýnýf Arkadaþlarý <small class="text-muted">(@ViewBag.Students.Count öðrenci)</small></h2>
                     <ul class="list-group">
                         @foreach (var item in ViewBag.Students)
                         {
@@ -337,8 +337,8 @@
                                             <i class="fas fa-ellipsis-v"></i>
                                         </button>
                                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                                            <li><a asp-action="MakeTeacher" asp-route-userId="@item.Id" asp-route-classroomId="@Model.Id" class="dropdown-item">Ã–ÄŸretmen yap</a></li>
-                                            <li><a asp-action="RemoveStudent" asp-route-userId="@item.Id" asp-route-classroomId="@Model.Id" class="dropdown-item">KaldÄ±r</a></li>
+                                            <li><a asp-action="MakeTeacher" asp-route-userId="@item.Id" asp-route-classroomId="@Model.Id" class="dropdown-item">Öðretmen yap</a></li>
+                                            <li><a asp-action="RemoveStudent" asp-route-userId="@item.Id" asp-route-classroomId="@Model.Id" class="dropdown-item">Kaldýr</a></li>
                                         </ul>
                                     </div>
                                 }
@@ -352,14 +352,14 @@
 
    
 
-    <button type="button" class="btn btn-primary" onclick="embedStackBlitz()">StackBlitz EditÃ¶rÃ¼ AÃ§</button>
+    <button type="button" class="btn btn-primary" onclick="embedStackBlitz()">StackBlitz Editörü Aç</button>
     <div id="stackblitz-embed" style="height:500px;width:100%;border:1px solid #ccc;margin-top:2rem; display:none;"></div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-    // Sekme deÄŸiÅŸtirme iÅŸlevselliÄŸi
+    // Sekme deðiþtirme iþlevselliði
     document.querySelectorAll('.nav-tabs .nav-link').forEach(link => {
         link.addEventListener('click', function (e) {
             e.preventDefault();
@@ -374,7 +374,7 @@
         });
     });
 
-    // "TÃ¼mÃ¼nÃ¼ GÃ¶rÃ¼ntÃ¼le" butonu
+    // "Tümünü Görüntüle" butonu
     const viewAllButton = document.getElementById('viewAllButton');
     if (viewAllButton) {
         viewAllButton.addEventListener('click', function () {
@@ -385,7 +385,7 @@
         });
     }
 
-    // StackBlitz editÃ¶rÃ¼nÃ¼ aÃ§an fonksiyon
+    // StackBlitz editörünü açan fonksiyon
     function embedStackBlitz() {
         const embedDiv = document.getElementById('stackblitz-embed');
         embedDiv.innerHTML = '<iframe src="https://stackblitz.com/edit/web-platform?embed=1&file=index.html" style="width:100%;height:100%;border:none;border-radius:8px;"></iframe>';

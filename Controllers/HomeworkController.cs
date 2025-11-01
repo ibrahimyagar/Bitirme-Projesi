@@ -1,12 +1,12 @@
-ï»¿using Classroom.Data;
-using Classroom.Models;
+using EduHub.Data;
+using EduHub.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Runtime.Intrinsics.Arm;
 using System.Security.Claims;
 
-namespace Classroom.Controllers
+namespace EduHub.Controllers
 {
     [Authorize]
     public class HomeworkController : Controller
@@ -164,9 +164,9 @@ namespace Classroom.Controllers
             };
 
             db.Homework.Add(newHomework);
-            db.SaveChanges();  // SaveChanges Ã§aÄŸrÄ±sÄ± yeni Homework kaydÄ±nÄ±n Id'sini oluÅŸturur
+            db.SaveChanges();  // SaveChanges çaðrýsý yeni Homework kaydýnýn Id'sini oluþturur
 
-            // HomeworkUser tablosuna kayÄ±tlar ekleniyor
+            // HomeworkUser tablosuna kayýtlar ekleniyor
             var UsersList = db.ClassUser.Where(cu => cu.ClassRoomId == classroomId && !cu.IsDelete && !cu.Roles).Select(cu => cu.ApplicationUserId).ToList();
 
             foreach (var user in UsersList)
@@ -174,12 +174,12 @@ namespace Classroom.Controllers
                 db.HomeworkUser.Add(new Homework_User
                 {
                     ApplicationUserId = user,
-                    HomeworkId = newHomework.Id,  // Yeni oluÅŸturulan Homework'Ã¼n Id'si burada kullanÄ±lÄ±yor
+                    HomeworkId = newHomework.Id,  // Yeni oluþturulan Homework'ün Id'si burada kullanýlýyor
                     Point = -1,
                 });
             }
 
-            db.SaveChanges();  // HomeworkUser kayÄ±tlarÄ±nÄ± veritabanÄ±na kaydetmek iÃ§in SaveChanges Ã§aÄŸrÄ±lÄ±yor
+            db.SaveChanges();  // HomeworkUser kayýtlarýný veritabanýna kaydetmek için SaveChanges çaðrýlýyor
 
             return RedirectToAction("Index", "Classroom", new { id = classroomId });
         }

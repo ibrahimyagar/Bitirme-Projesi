@@ -11,13 +11,13 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:8080
-      - ConnectionStrings__DefaultConnection=Server=db;Database=ClassroomDB;User Id=sa;Password=YourStrong@Passw0rd;TrustServerCertificate=True
+      - ConnectionStrings__DefaultConnection=Server=db;Database=EduHubDB;User Id=sa;Password=YourStrong@Passw0rd;TrustServerCertificate=True
     depends_on:
       - db
     volumes:
       - ../wwwroot/uploads:/app/wwwroot/uploads
     networks:
-      - classroom-network
+      - eduhub-network
 
   db:
     image: mcr.microsoft.com/mssql/server:2022-latest
@@ -30,12 +30,12 @@ services:
     volumes:
       - sqlserver-data:/var/opt/mssql
     networks:
-      - classroom-network
+      - eduhub-network
 
 volumes:
   sqlserver-data:
 
 networks:
-  classroom-network:
+  eduhub-network:
     driver: bridge
 

@@ -1,7 +1,7 @@
-ï»¿@page
+@page
 @model LoginModel
 @{
-    ViewData["Title"] = "GiriÅŸ Yap";
+    ViewData["Title"] = "Giriþ Yap";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -21,8 +21,8 @@
                             <span asp-validation-for="Input.Email" class="text-danger"></span>
                         </div>
                         <div class="mb-3">
-                            <label asp-for="Input.Password" class="form-label">Åžifre</label>
-                            <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Åžifre">
+                            <label asp-for="Input.Password" class="form-label">Þifre</label>
+                            <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Þifre">
                             <span asp-validation-for="Input.Password" class="text-danger"></span>
                         </div>
                         <div class="mb-3 form-check">
@@ -31,13 +31,13 @@
                                 @Html.DisplayNameFor(m => m.Input.RememberMe)
                             </label>
                         </div>
-                        <button id="login-submit" type="submit" class="btn btn-primary w-100">GiriÅŸ Yap</button>
+                        <button id="login-submit" type="submit" class="btn btn-primary w-100">Giriþ Yap</button>
                         <div class="mt-3 text-center">
                             <p>
-                                <a id="forgot-password" asp-page="./ForgotPassword">Åžifremi Unuttum</a>
+                                <a id="forgot-password" asp-page="./ForgotPassword">Þifremi Unuttum</a>
                             </p>
                             <p>
-                                HesabÄ±nÄ±z yok mu? <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">KayÄ±t Olun</a>
+                                Hesabýnýz yok mu? <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Kayýt Olun</a>
                             </p>
                         </div>
                        <style>
@@ -66,13 +66,13 @@
             <div class="col-md-6">
                 <div class="card mt-3 mt-md-0">
                     <div class="card-header bg-primary text-white">
-                        <h3 class="text-center mb-0">DÄ±ÅŸ Servis ile GiriÅŸ YapÄ±n</h3>
+                        <h3 class="text-center mb-0">Dýþ Servis ile Giriþ Yapýn</h3>
                     </div>
                     <div class="card-body">
                         <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post">
                             @foreach (var provider in Model.ExternalLogins!)
                             {
-                                <button type="submit" class="btn btn-secondary w-100 mb-2" name="provider" value="@provider.Name" title="@provider.DisplayName hesabÄ±nÄ±zla giriÅŸ yapÄ±n">@provider.DisplayName ile GiriÅŸ YapÄ±n</button>
+                                <button type="submit" class="btn btn-secondary w-100 mb-2" name="provider" value="@provider.Name" title="@provider.DisplayName hesabýnýzla giriþ yapýn">@provider.DisplayName ile Giriþ Yapýn</button>
                             }
                         </form>
                     </div>

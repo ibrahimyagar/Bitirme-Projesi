@@ -1,12 +1,12 @@
-ï»¿using Microsoft.AspNetCore.Mvc;
-using Classroom.Models;
-using Classroom.Data;
+using Microsoft.AspNetCore.Mvc;
+using EduHub.Models;
+using EduHub.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using System.Security.Cryptography;
 
-namespace Classroom.Controllers
+namespace EduHub.Controllers
 {
     [Authorize]
     public class ClassroomController : Controller
@@ -63,19 +63,19 @@ namespace Classroom.Controllers
             ViewBag.Announcements = db.Announcements
                 .Where(a => a.ClassRoomId == id && !a.IsDelete)
                 .Include(a => a.ApplicationUser)
-                .OrderByDescending(a => a.Id) // DuyurularÄ± duyuru ID'sine gÃ¶re azalan ÅŸekilde sÄ±ralar
+                .OrderByDescending(a => a.Id) // Duyurularý duyuru ID'sine göre azalan þekilde sýralar
                 .ToList();
 
 
             ViewBag.Homeworks = db.Homework
                 .Where(a => a.ClassRoomId == id)
-                .OrderByDescending(a => a.Id) // DuyurularÄ± duyuru ID'sine gÃ¶re azalan ÅŸekilde sÄ±ralar
+                .OrderByDescending(a => a.Id) // Duyurularý duyuru ID'sine göre azalan þekilde sýralar
                 .ToList();
 
             ViewBag.Comments = db.Comment
                 .Include(c => c.Announcements)
                 .Where(c => c.Announcements.ClassRoomId == id && !c.IsDelete)
-                .OrderBy(a => a.Id) // DuyurularÄ± duyuru ID'sine gÃ¶re azalan ÅŸekilde sÄ±ralar
+                .OrderBy(a => a.Id) // Duyurularý duyuru ID'sine göre azalan þekilde sýralar
                 .ToList();
 
             var allHomeworks = db.Homework
@@ -139,18 +139,18 @@ namespace Classroom.Controllers
             ViewBag.Announcements = db.Announcements
                 .Where(a => a.ClassRoomId == id && !a.IsDelete)
                 .Include(a => a.ApplicationUser)
-                .OrderByDescending(a => a.Id) // DuyurularÄ± duyuru ID'sine gÃ¶re azalan ÅŸekilde sÄ±ralar
+                .OrderByDescending(a => a.Id) // Duyurularý duyuru ID'sine göre azalan þekilde sýralar
                 .ToList();
 
             ViewBag.Homeworks = db.Homework
                 .Where(a => a.ClassRoomId == id)
-                .OrderByDescending(a => a.Id) // DuyurularÄ± duyuru ID'sine gÃ¶re azalan ÅŸekilde sÄ±ralar
+                .OrderByDescending(a => a.Id) // Duyurularý duyuru ID'sine göre azalan þekilde sýralar
                 .ToList();
 
             ViewBag.Comments = db.Comment
                 .Include(c => c.Announcements)
                 .Where(c => c.Announcements.ClassRoomId == id && !c.IsDelete)
-                .OrderBy(a => a.Id) // DuyurularÄ± duyuru ID'sine gÃ¶re azalan ÅŸekilde sÄ±ralar
+                .OrderBy(a => a.Id) // Duyurularý duyuru ID'sine göre azalan þekilde sýralar
                 .ToList();
 
            

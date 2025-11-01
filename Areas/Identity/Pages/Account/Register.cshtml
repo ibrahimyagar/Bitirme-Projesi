@@ -1,7 +1,7 @@
-ï»¿@page
+@page
 @model RegisterModel
 @{
-    ViewData["Title"] = "KayÄ±t Ol";
+    ViewData["Title"] = "Kayýt Ol";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -35,12 +35,12 @@
                         <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
                         <div class="mb-3">
                             <label asp-for="Input.Name" class="form-label">Ad</label>
-                            <input asp-for="Input.Name" class="form-control" autocomplete="name" aria-required="true" placeholder="AdÄ±nÄ±zÄ± Girin">
+                            <input asp-for="Input.Name" class="form-control" autocomplete="name" aria-required="true" placeholder="Adýnýzý Girin">
                             <span asp-validation-for="Input.Name" class="text-danger"></span>
                         </div>
                         <div class="mb-3">
                             <label asp-for="Input.Surname" class="form-label">Soyad</label>
-                            <input asp-for="Input.Surname" class="form-control" autocomplete="surname" aria-required="true" placeholder="SoyadÄ±nÄ±zÄ± Girin">
+                            <input asp-for="Input.Surname" class="form-control" autocomplete="surname" aria-required="true" placeholder="Soyadýnýzý Girin">
                             <span asp-validation-for="Input.Surname" class="text-danger"></span>
                         </div>
                         <div class="mb-3">
@@ -49,20 +49,20 @@
                             <span asp-validation-for="Input.Email" class="text-danger"></span>
                         </div>
                         <div class="mb-3">
-                            <label asp-for="Input.Password" class="form-label">Åžifre</label>
-                            <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Åžifre">
+                            <label asp-for="Input.Password" class="form-label">Þifre</label>
+                            <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Þifre">
                             <span asp-validation-for="Input.Password" class="text-danger"></span>
                         </div>
                         <div class="mb-3">
-                            <label asp-for="Input.ConfirmPassword" class="form-label">Åžifreyi Onayla</label>
-                            <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Åžifreyi Onayla">
+                            <label asp-for="Input.ConfirmPassword" class="form-label">Þifreyi Onayla</label>
+                            <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Þifreyi Onayla">
                             <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                         </div>
-                        <button id="registerSubmit" type="submit" class="btn btn-primary w-100">KayÄ±t Ol</button>
+                        <button id="registerSubmit" type="submit" class="btn btn-primary w-100">Kayýt Ol</button>
                     </form>
                     <hr>
                     <div class="text-center">
-                        Zaten bir hesabÄ±nÄ±z var mÄ±? <a href="/Identity/Account/Login">GiriÅŸ Yap</a>
+                        Zaten bir hesabýnýz var mý? <a href="/Identity/Account/Login">Giriþ Yap</a>
                     </div>
                 </div>
             </div>
@@ -72,13 +72,13 @@
             <div class="col-md-6">
                 <div class="card mt-3 mt-md-0">
                     <div class="card-header bg-primary text-white">
-                        <h3 class="text-center mb-0">DÄ±ÅŸ Servis ile KayÄ±t Ol</h3>
+                        <h3 class="text-center mb-0">Dýþ Servis ile Kayýt Ol</h3>
                     </div>
                     <div class="card-body">
                         <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
                             @foreach (var provider in Model.ExternalLogins!)
                             {
-                                <button type="submit" class="btn btn-secondary w-100 mb-2" name="provider" value="@provider.Name" title="HesabÄ±nÄ±zla kayÄ±t olun">@provider.DisplayName ile KayÄ±t Ol</button>
+                                <button type="submit" class="btn btn-secondary w-100 mb-2" name="provider" value="@provider.Name" title="Hesabýnýzla kayýt olun">@provider.DisplayName ile Kayýt Ol</button>
                             }
                         </form>
                     </div>

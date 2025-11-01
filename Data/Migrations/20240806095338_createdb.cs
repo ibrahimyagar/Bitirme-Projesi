@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Classroom.Data.Migrations
+namespace EduHub.Data.Migrations
 {
     /// <inheritdoc />
     public partial class createdb : Migration

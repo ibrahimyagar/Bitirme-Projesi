@@ -1,8 +1,8 @@
-ï»¿@model Homework
+@model Homework
 @using System.Globalization;
 @{
     Layout = "_Layout2";
-    ViewData["Title"] = Model.Name + " - Ã–dev";
+    ViewData["Title"] = Model.Name + " - Ödev";
 }
 
 @section CSSSection {
@@ -58,7 +58,7 @@
                     </div>
 
                     <div class="project-info">
-                        <p><strong>PuanÄ±nÄ±z: @(ViewBag.HomeworkUser.Point == -1 ? "?" : ViewBag.HomeworkUser.Point)/100</strong></p>
+                        <p><strong>Puanýnýz: @(ViewBag.HomeworkUser.Point == -1 ? "?" : ViewBag.HomeworkUser.Point)/100</strong></p>
                         <span class="text-small">Son teslim tarihi @Model.DueDate.ToString("dMMMM", CultureInfo.CreateSpecificCulture("en-US")) @Model.DueDate.ToString("HH:mm")</span>
                     </div>
 
@@ -74,13 +74,13 @@
             <div class="col-md-5 d-flex">
                 <div class="card card-custom shadow-sm flex-fill">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Ã–deviniz</h5>
+                        <h5 class="card-title">Ödeviniz</h5>
                         @if (DateTime.Now > Model.DueDate)
                         {
-                            <h6 class="text-danger">Bu Ã¶devin teslim tarihi geÃ§ti</h6>
+                            <h6 class="text-danger">Bu ödevin teslim tarihi geçti</h6>
                         }
-                        <p class="text-succsess">TamamlandÄ±</p>
-                        <button style="width:200px;" class="btn btn-outline-primary mb-2" disabled>Ã–dev Ekle</button>
+                        <p class="text-succsess">Tamamlandý</p>
+                        <button style="width:200px;" class="btn btn-outline-primary mb-2" disabled>Ödev Ekle</button>
                     </div>
                 </div>
             </div>
@@ -90,27 +90,27 @@
             <div class="col-md-5 d-flex">
                 <div class="card card-custom shadow-sm flex-fill">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Ã–deviniz</h5>
+                        <h5 class="card-title">Ödeviniz</h5>
                         @{
                             var isClassroomActive = Model.ClassRoom.IsActive;
                             var isDeadlinePassed = DateTime.Now > Model.DueDate;
                         }
                         @if (isDeadlinePassed)
                         {
-                            <h6 class="text-danger">Ã–devin teslim tarihi geÃ§ti</h6>
+                            <h6 class="text-danger">Ödevin teslim tarihi geçti</h6>
                         }
                         <p class="text-danger">Eksik</p>
 
                         @if (isClassroomActive && !isDeadlinePassed)
                         {
                             <a style="width:200px;" class="btn btn-outline-primary mb-2" asp-action="AddHomework" asp-route-HomeworkId="@Model.Id">
-                                Ã–dev Ekle
+                                Ödev Ekle
                             </a>
                         }
                         else
                         {
                             <button style="width:200px;" class="btn btn-outline-primary mb-2" asp-action="AddHomework" asp-route-HomeworkId="@Model.Id" disabled>
-                                Ã–dev Ekle
+                                Ödev Ekle
                             </button>
                         }
                     </div>
@@ -120,22 +120,22 @@
             @* <div class="col-md-5 d-flex">
                 <div class="card card-custom shadow-sm flex-fill">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Ã–deviniz</h5>
+                        <h5 class="card-title">Ödeviniz</h5>
                         @{
                             var active = Model.ClassRoom.IsActive;
                         }
                         @if (DateTime.Now > Model.DueDate)
                         {
-                            <h6 class="text-danger">Bu Ã¶devin teslim tarihi geÃ§ti</h6>
+                            <h6 class="text-danger">Bu ödevin teslim tarihi geçti</h6>
                         }
                         <p class="text-danger">Eksik</p>
                         @if (DateTime.Now > Model.DueDate)
                         {
-                            <button style="width:200px;" class="btn btn-outline-primary mb-2" asp-action="AddHomework" asp-route-HomeworkId="@Model.Id" disabled>Ã–dev Ekle</button>
+                            <button style="width:200px;" class="btn btn-outline-primary mb-2" asp-action="AddHomework" asp-route-HomeworkId="@Model.Id" disabled>Ödev Ekle</button>
                         }
                         else
                         {
-                            <button style="width:200px;" class="btn btn-outline-primary mb-2" asp-action="AddHomework" asp-route-HomeworkId="@Model.Id")>Ã–dev Ekle</button>
+                            <button style="width:200px;" class="btn btn-outline-primary mb-2" asp-action="AddHomework" asp-route-HomeworkId="@Model.Id")>Ödev Ekle</button>
                         }
                     </div>
                 </div>

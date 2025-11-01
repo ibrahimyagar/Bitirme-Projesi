@@ -1,17 +1,17 @@
-using Classroom.Data;
-using Classroom.Models;
-using Classroom.ViewModels;
+using EduHub.Data;
+using EduHub.Models;
+using EduHub.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using System.Linq;
-using Classroom.ViewModels;
+using EduHub.ViewModels;
 using System.Security.Claims;
 
 
-namespace Classroom.Controllers
+namespace EduHub.Controllers
 {
     [Authorize]
     public class HomeController : Controller

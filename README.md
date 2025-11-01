@@ -1,8 +1,8 @@
-# Classroom - Sınıf Yönetim Sistemi
+# EduHub - Eğitim Hub Platformu
 
 ## 📋 Proje Hakkında
 
-**Classroom**, öğretmenler ve öğrenciler için geliştirilmiş bir web tabanlı sınıf yönetim sistemidir. Bu platform, dijital sınıf ortamlarında ödev takibi, duyuru yönetimi, öğrenci-öğretmen etkileşimi ve öğretmen değerlendirme sistemini içeren kapsamlı bir çözüm sunar.
+**EduHub**, öğretmenler ve öğrenciler için geliştirilmiş bir web tabanlı eğitim yönetim platformudur. Bu platform, dijital sınıf ortamlarında ödev takibi, duyuru yönetimi, öğrenci-öğretmen etkileşimi ve öğretmen değerlendirme sistemini içeren kapsamlı bir çözüm sunar.
 
 ### 🎯 Ana Özellikler
 
@@ -35,7 +35,7 @@
 1. **Projeyi Klonlayın**
    ```bash
    git clone <repository-url>
-   cd Classroom
+   cd EduHub
    ```
 
 2. **Veritabanı Bağlantı Stringini Yapılandırın**
@@ -44,7 +44,7 @@
    ```json
    {
      "ConnectionStrings": {
-       "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=ClassroomDB;Trusted_Connection=True;MultipleActiveResultSets=true"
+       "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=EduHubDB;Trusted_Connection=True;MultipleActiveResultSets=true"
      }
    }
    ```
@@ -53,7 +53,7 @@
    ```json
    {
      "ConnectionStrings": {
-       "DefaultConnection": "Server=YOUR_SERVER;Database=ClassroomDB;User Id=YOUR_USER;Password=YOUR_PASSWORD;Trusted_Connection=False;MultipleActiveResultSets=true"
+       "DefaultConnection": "Server=YOUR_SERVER;Database=EduHubDB;User Id=YOUR_USER;Password=YOUR_PASSWORD;Trusted_Connection=False;MultipleActiveResultSets=true"
      }
    }
    ```
@@ -230,8 +230,8 @@ Bitirme-Projesi/
 ├── 📄 SECURITY.md                 # Güvenlik politikası
 ├── 📄 appsettings.json            # Uygulama ayarları
 ├── 📄 appsettings.Development.json
-├── 📄 Classroom.csproj            # Proje dosyası
-├── 📄 Classroom.sln               # Solution dosyası
+├── 📄 EduHub.csproj            # Proje dosyası
+├── 📄 EduHub.sln               # Solution dosyası
 └── 📄 Program.cs                  # Uygulama giriş noktası
 ```
 

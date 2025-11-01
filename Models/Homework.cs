@@ -1,4 +1,4 @@
-﻿namespace Classroom.Models
+namespace EduHub.Models
 {
     public class Homework
     {

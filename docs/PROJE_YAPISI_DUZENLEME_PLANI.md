@@ -66,8 +66,8 @@ Bitirme-Projesi/
 ├── SECURITY.md
 ├── appsettings.json
 ├── appsettings.Development.json
-├── Classroom.csproj
-├── Classroom.sln
+├── EduHub.csproj
+├── EduHub.sln
 └── Program.cs
 ```
 

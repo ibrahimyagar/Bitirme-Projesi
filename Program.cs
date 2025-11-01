@@ -1,7 +1,7 @@
-using Classroom.Data;
+using EduHub.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-namespace Classroom
+namespace EduHub
 {
     public class Program
     {

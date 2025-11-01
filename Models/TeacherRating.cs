@@ -1,4 +1,4 @@
-using Classroom.Models;
+using EduHub.Models;
 public class TeacherRating
 {
     public int Id { get; set; }

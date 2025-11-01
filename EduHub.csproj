@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-Classroom-b8d786a4-77a1-4db1-863a-d416a3d47977</UserSecretsId>
+    <UserSecretsId>aspnet-EduHub-b8d786a4-77a1-4db1-863a-d416a3d47977</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

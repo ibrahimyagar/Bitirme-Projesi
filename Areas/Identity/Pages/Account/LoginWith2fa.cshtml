@@ -1,12 +1,12 @@
-ï»¿@page
+@page
 @model LoginWith2faModel
 @{
-    ViewData["Title"] = "Ä°ki faktÃ¶rlÃ¼ kimlik doÄŸrulama";
+    ViewData["Title"] = "İki faktörlü kimlik doğrulama";
 }
 
 <h1>@ViewData["Title"]</h1>
 <hr />
-<p>GiriÅŸiniz bir kimlik doÄŸrulama uygulamasÄ± ile korunmaktadÄ±r. AÅŸaÄŸÄ±ya kimlik doÄŸrulama kodunuzu girin.</p>
+<p>Girişiniz bir kimlik doğrulama uygulaması ile korunmaktadır. Aşağıya kimlik doğrulama kodunuzu girin.</p>
 <div class="row">
     <div class="col-md-4">
         <form method="post" asp-route-returnUrl="@Model.ReturnUrl">
@@ -24,14 +24,14 @@
                 </label>
             </div>
             <div>
-                <button type="submit" class="w-100 btn btn-lg btn-primary">GiriÅŸ Yap</button>
+                <button type="submit" class="w-100 btn btn-lg btn-primary">Giriş Yap</button>
             </div>
         </form>
     </div>
 </div>
 <p>
-    Kimlik doÄŸrulama cihazÄ±nÄ±za eriÅŸiminiz yok mu?
-    <a id="recovery-code-login" asp-page="./LoginWithRecoveryCode" asp-route-returnUrl="@Model.ReturnUrl">Bir kurtarma kodu ile giriÅŸ yapabilirsiniz</a>.
+    Kimlik doğrulama cihazınıza erişiminiz yok mu?
+    <a id="recovery-code-login" asp-page="./LoginWithRecoveryCode" asp-route-returnUrl="@Model.ReturnUrl">Bir kurtarma kodu ile giriş yapabilirsiniz</a>.
 </p>
 
 @section Scripts {

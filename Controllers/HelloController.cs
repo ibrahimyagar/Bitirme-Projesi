@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Classroom.Controllers
+namespace EduHub.Controllers
 {
     public class HelloController : Controller
     {

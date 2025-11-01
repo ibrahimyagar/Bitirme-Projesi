@@ -1,8 +1,8 @@
-ï»¿@model Homework
+@model Homework
 @using System.Globalization;
 @{
     Layout = "_Layout2";
-    ViewData["Title"] = "Ã–devi DÃ¼zenle";
+    ViewData["Title"] = "Ödevi Düzenle";
     var formattedDueDate = @Model.DueDate.ToString("yyyy-MM-ddTHH:mm", CultureInfo.InvariantCulture);
 }
 
@@ -11,11 +11,11 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="mb-3">
-                    <label for="question" class="form-label h4">Soru BaÅŸlÄ±ÄŸÄ±</label>
+                    <label for="question" class="form-label h4">Soru Baþlýðý</label>
                     <input name="questionTitle" type="text" class="form-control" id="question" value="@Model.Name">
                 </div>
                 <div class="mb-3">
-                    <label for="instructions" class="form-label h4">AÃ§Ä±klama</label>
+                    <label for="instructions" class="form-label h4">Açýklama</label>
                     <textarea name="description" class="form-control" id="instructions" rows="3">@Model.Description</textarea>
                 </div>
                 <input type="hidden" name="homeworkId" value="@Model.Id" />

@@ -5,7 +5,7 @@
 ### Tespit Edilen Sorunlar:
 - ✅ `bin/`, `obj/`, `.vs/`, `node_modules/` klasörleri fiziksel olarak mevcut (git'ten kaldırılmalı)
 - ✅ `PROJE_YAPISI_DUZENLEME_PLANI.md` hem kök dizinde hem `docs/` klasöründe (duplicate)
-- ✅ `Classroom.csproj.user` dosyası kök dizinde (git'ten kaldırılmalı)
+- ✅ `EduHub.csproj.user` dosyası kök dizinde (git'ten kaldırılmalı)
 - ✅ `Properties/` içinde `.user` dosyaları var
 - ✅ `wwwroot/uploads/` klasörü var (içeriği kontrol edilmeli)
 
@@ -133,8 +133,8 @@ Bitirme-Projesi/
 ├── 📄 SECURITY.md                      # Güvenlik politikası
 ├── 📄 appsettings.json                 # Uygulama ayarları
 ├── 📄 appsettings.Development.json    # Geliştirme ayarları
-├── 📄 Classroom.csproj                 # Proje dosyası
-├── 📄 Classroom.sln                    # Solution dosyası
+├── 📄 EduHub.csproj                 # Proje dosyası
+├── 📄 EduHub.sln                    # Solution dosyası
 └── 📄 Program.cs                       # Uygulama giriş noktası
 ```
 
@@ -149,7 +149,7 @@ Bitirme-Projesi/
 - `node_modules/` (npm paketleri)
 
 ### Dosyalar:
-- `Classroom.csproj.user` (Visual Studio user settings)
+- `EduHub.csproj.user` (Visual Studio user settings)
 - `Properties/serviceDependencies.local.json.user` (user-specific)
 - `PROJE_YAPISI_DUZENLEME_PLANI.md` (kök dizinden - docs'ta zaten var)
 

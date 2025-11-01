@@ -1,7 +1,7 @@
-ï»¿@page
+@page
 @model RegisterConfirmationModel
 @{
-    ViewData["Title"] = "KayÄ±t OnayÄ±";
+    ViewData["Title"] = "Kayıt Onayı";
 }
 
 <h1>@ViewData["Title"]</h1>
@@ -9,14 +9,14 @@
     if (@Model.DisplayConfirmAccountLink)
     {
         <p>
-            Bu uygulama ÅŸu anda gerÃ§ek bir e-posta gÃ¶ndericisi kaydedilmemiÅŸtir, gerÃ§ek bir e-posta gÃ¶ndericisini nasÄ±l yapÄ±landÄ±racaÄŸÄ±nÄ±zla ilgili <a href="https://aka.ms/aspaccountconf">bu dÃ¶kÃ¼manlara</a> bakabilirsiniz.
-            Genellikle bu e-posta ile gÃ¶nderilir: <a id="confirm-link" href="@Model.EmailConfirmationUrl">HesabÄ±nÄ±zÄ± onaylamak iÃ§in buraya tÄ±klayÄ±n</a>
+            Bu uygulama şu anda gerçek bir e-posta göndericisi kaydedilmemiştir, gerçek bir e-posta göndericisini nasıl yapılandıracağınızla ilgili <a href="https://aka.ms/aspaccountconf">bu dökümanlara</a> bakabilirsiniz.
+            Genellikle bu e-posta ile gönderilir: <a id="confirm-link" href="@Model.EmailConfirmationUrl">Hesabınızı onaylamak için buraya tıklayın</a>
         </p>
     }
     else
     {
         <p>
-            LÃ¼tfen hesabÄ±nÄ±zÄ± onaylamak iÃ§in e-postanÄ±zÄ± kontrol edin.
+            Lütfen hesabınızı onaylamak için e-postanızı kontrol edin.
         </p>
     }
 }

@@ -1,9 +1,9 @@
-﻿using Classroom.Data;
+using EduHub.Data;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using Classroom.Models;
+using EduHub.Models;
 
-namespace Classroom.Controllers
+namespace EduHub.Controllers
 {
     public class CommentController : Controller
     {

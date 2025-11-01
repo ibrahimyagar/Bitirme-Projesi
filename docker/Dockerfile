@@ -3,16 +3,16 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Copy csproj and restore dependencies
-COPY ["Classroom.csproj", "./"]
-RUN dotnet restore "Classroom.csproj"
+COPY ["EduHub.csproj", "./"]
+RUN dotnet restore "EduHub.csproj"
 
 # Copy everything else and build
 COPY . .
-RUN dotnet build "Classroom.csproj" -c Release -o /app/build
+RUN dotnet build "EduHub.csproj" -c Release -o /app/build
 
 # Publish stage
 FROM build AS publish
-RUN dotnet publish "Classroom.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "EduHub.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 # Runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
@@ -30,5 +30,5 @@ RUN chmod -R 755 /app/wwwroot/uploads
 EXPOSE 8080
 EXPOSE 8081
 
-ENTRYPOINT ["dotnet", "Classroom.dll"]
+ENTRYPOINT ["dotnet", "EduHub.dll"]
 

@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace Classroom.Data.Migrations
+namespace EduHub.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

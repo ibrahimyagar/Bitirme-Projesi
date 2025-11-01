@@ -1,6 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
-namespace Classroom.ViewModels
+namespace EduHub.ViewModels
 {
     public class JoinClassRoomModel
     {

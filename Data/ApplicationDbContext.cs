@@ -1,8 +1,8 @@
-﻿using Classroom.Models;
+using EduHub.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Classroom.Data
+namespace EduHub.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

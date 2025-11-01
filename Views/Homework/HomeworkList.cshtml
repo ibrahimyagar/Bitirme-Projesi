@@ -1,8 +1,8 @@
-ï»¿@model Homework
+@model Homework
 @using System.Globalization;
 @{
     Layout = "_Layout2";
-    ViewData["Title"] = "Ã–devler";
+    ViewData["Title"] = "Ödevler";
 }
 <div class="container mt-5" style="padding-left: 300px; padding-right: 300px;">
     <div class="row align-items-stretch">
@@ -32,7 +32,7 @@
     </div>
 </div>
 <div class="container-fluid mt-4" style="padding-left: 300px; padding-right: 300px;">
-    <h2 class="mb-4">Ã–ÄŸrenci YanÄ±tlarÄ±</h2>
+    <h2 class="mb-4">Öðrenci Yanýtlarý</h2>
 
     <div class="row">
         <div class="col-md-12">
@@ -42,11 +42,11 @@
                         <table class="table table-hover">
                             <thead class="table-light">
                                 <tr>
-                                    <th scope="col">Ã–ÄŸrenci AdÄ±</th>
+                                    <th scope="col">Öðrenci Adý</th>
                                     <th scope="col">Teslim Tarihi</th>
                                     <th scope="col">Durum</th>
                                     <th scope="col">Not</th>
-                                    <th scope="col">Ä°ÅŸlemler</th>
+                                    <th scope="col">Ýþlemler</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -62,13 +62,13 @@
                                             }
                                             else
                                             {
-                                                <span class="badge bg-success">TamamlandÄ±</span>
+                                                <span class="badge bg-success">Tamamlandý</span>
                                             }
                                         </td>
                                         <td>@(answer.Point == -1 ? "-" : answer.Point)</td>
                                         <td>
                                             <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#answerModal-@answer.Id" @(answer.Work == null ? "Disabled" : "")>
-                                                GÃ¶rÃ¼ntÃ¼le ve Not Ver
+                                                Görüntüle ve Not Ver
                                             </button>
                                         </td>
                                     </tr>
@@ -77,8 +77,8 @@
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="answerModalLabel">
-                                                        @answer.ApplicationUser.Name Â 
-                                                        - YanÄ±t
+                                                        @answer.ApplicationUser.Name  
+                                                        - Yanýt
                                                     </h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
                                                 </div>
@@ -90,7 +90,7 @@
                                                             <label for="grade-@answer.Id" class="form-label">Notu Girin (0-100)</label>
                                                             <input type="number" class="form-control" id="grade-@answer.Id" name="Grade" min="0" max="100" value="@answer.Point" required>
                                                         </div>
-                                                        <button type="submit" class="btn btn-success" id="submitBtn-@answer.Id">Notu GÃ¶nder</button>
+                                                        <button type="submit" class="btn btn-success" id="submitBtn-@answer.Id">Notu Gönder</button>
                                                     </form>
                                                 </div>
                                                 <div class="modal-footer">
@@ -116,11 +116,11 @@
             var inputId = this.id.replace('submitBtn-', 'grade-');
             var gradeInput = document.getElementById(inputId);
             if (gradeInput.value < 0 || gradeInput.value > 100 || gradeInput.value === "") {
-                e.preventDefault(); // Formun gÃ¶nderilmesini engeller
-                alert("LÃ¼tfen 0 ile 100 arasÄ±nda geÃ§erli bir not girin.");
+                e.preventDefault(); // Formun gönderilmesini engeller
+                alert("Lütfen 0 ile 100 arasýnda geçerli bir not girin.");
             }
         });
     });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" Â 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"  
         integrity="sha384-bskAUcgyehUtQxjfkEFs0nCMKwvKKNKNsQj8uC8wWj:**"></script>

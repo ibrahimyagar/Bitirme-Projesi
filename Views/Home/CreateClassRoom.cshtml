@@ -1,7 +1,7 @@
-ï»¿@model ClassRoom
+@model ClassRoom
 @{
     Layout = "_Layout2";
-    ViewData["Title"] = "SÄ±nÄ±f OluÅŸtur";
+    ViewData["Title"] = "Sýnýf Oluþtur";
 }
 
 @section CSSSection {
@@ -50,20 +50,20 @@
 <div class="container mt-5">
     <div class="form-container">
         <div class="form-header">
-            <h2>Yeni SÄ±nÄ±f OluÅŸtur</h2>
+            <h2>Yeni Sýnýf Oluþtur</h2>
         </div>
         <form method="post">
             <div class="mb-3">
-                <label class="form-label" asp-for="Name">SÄ±nÄ±f AdÄ±</label>
-                <input class="form-control" asp-for="Name" id="className" placeholder="SÄ±nÄ±f adÄ±nÄ± buraya girin">
+                <label class="form-label" asp-for="Name">Sýnýf Adý</label>
+                <input class="form-control" asp-for="Name" id="className" placeholder="Sýnýf adýný buraya girin">
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="Description" class="form-label">AÃ§Ä±klama</label>
-                <input class="form-control" asp-for="Description" id="classDescription" placeholder="SÄ±nÄ±f aÃ§Ä±klamasÄ±nÄ± buraya girin">
+                <label asp-for="Description" class="form-label">Açýklama</label>
+                <input class="form-control" asp-for="Description" id="classDescription" placeholder="Sýnýf açýklamasýný buraya girin">
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-primary">SÄ±nÄ±f OluÅŸtur</button>
+            <button type="submit" class="btn btn-primary">Sýnýf Oluþtur</button>
         </form>
     </div>
 </div>

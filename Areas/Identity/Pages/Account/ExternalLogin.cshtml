@@ -1,16 +1,16 @@
-ï»¿@page
+@page
 @model ExternalLoginModel
 @{
-    ViewData["Title"] = "KayÄ±t Ol";
+    ViewData["Title"] = "Kayıt Ol";
 }
 
 <h1>@ViewData["Title"]</h1>
-<h2 id="external-login-title">HesabÄ±nÄ±zÄ± @Model.ProviderDisplayName ile iliÅŸkilendirin.</h2>
+<h2 id="external-login-title">Hesabınızı @Model.ProviderDisplayName ile ilişkilendirin.</h2>
 <hr />
 
 <p id="external-login-description" class="text-info">
-    <strong>@Model.ProviderDisplayName</strong> ile baÅŸarÄ±yla kimlik doÄŸrulamasÄ± yaptÄ±nÄ±z.
-    LÃ¼tfen bu site iÃ§in aÅŸaÄŸÄ±ya bir e-posta adresi girin ve iÅŸlemi tamamlamak iÃ§in KayÄ±t Ol butonuna tÄ±klayÄ±n.
+    <strong>@Model.ProviderDisplayName</strong> ile başarıyla kimlik doğrulaması yaptınız.
+    Lütfen bu site için aşağıya bir e-posta adresi girin ve işlemi tamamlamak için Kayıt Ol butonuna tıklayın.
 </p>
 
 <div class="row">
@@ -18,11 +18,11 @@
         <form asp-page-handler="Confirmation" asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
             <div class="form-floating mb-3">
-                <input asp-for="Input.Email" class="form-control" autocomplete="email" placeholder="LÃ¼tfen e-posta adresinizi girin." />
+                <input asp-for="Input.Email" class="form-control" autocomplete="email" placeholder="Lütfen e-posta adresinizi girin." />
                 <label asp-for="Input.Email" class="form-label"></label>
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
-            <button type="submit" class="w-100 btn btn-lg btn-primary">KayÄ±t Ol</button>
+            <button type="submit" class="w-100 btn btn-lg btn-primary">Kayıt Ol</button>
         </form>
     </div>
 </div>

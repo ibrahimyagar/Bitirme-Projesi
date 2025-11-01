@@ -1,7 +1,7 @@
-ï»¿@model JoinClassRoomModel
+@model JoinClassRoomModel
 @{
     Layout = "_Layout2";
-    ViewData["Title"] = "SÄ±nÄ±fa KatÄ±l";
+    ViewData["Title"] = "Sýnýfa Katýl";
 }
 @section CSSSection {
     <style>
@@ -26,10 +26,10 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h4>SÄ±nÄ±fa KatÄ±l</h4>
+                    <h4>Sýnýfa Katýl</h4>
                 </div>
                 <div class="card-body">
-                    <p>Åžu anda e-posta adresinizle giriÅŸ yaptÄ±nÄ±z: @User.Identity?.Name</p>
+                    <p>Þu anda e-posta adresinizle giriþ yaptýnýz: @User.Identity?.Name</p>
                     <div class="d-flex align-items-center mb-3">
                         <div class="class-avatar" style="background-color: #43a047;">@ViewBag.ApplicationUser.Name[0]</div>
                         <div class="ms-2">@ViewBag.ApplicationUser.Name @ViewBag.ApplicationUser.Surname</div>
@@ -42,17 +42,17 @@
                     }
                     <form method="post" id="joinClassForm">
                         <div class="mb-3">
-                            <label for="sinifKodu" class="form-label">SÄ±nÄ±f Kodu:</label>
-                            <input asp-for="ClassRoomUnicCode" type="text" class="form-control" id="sinifKodu" placeholder="Ã–ÄŸretmeninizden aldÄ±ÄŸÄ±nÄ±z sÄ±nÄ±f kodunu buraya girin.">
+                            <label for="sinifKodu" class="form-label">Sýnýf Kodu:</label>
+                            <input asp-for="ClassRoomUnicCode" type="text" class="form-control" id="sinifKodu" placeholder="Öðretmeninizden aldýðýnýz sýnýf kodunu buraya girin.">
                         </div>
-                        <p>SÄ±nÄ±fa bu kod ile katÄ±lmak iÃ§in:</p>
+                        <p>Sýnýfa bu kod ile katýlmak için:</p>
                         <ul>
-                            <li>GeÃ§erli bir hesap kullanÄ±n</li>
-                            <li>BoÅŸluk veya sembol iÃ§ermeyen, 7 harf veya rakamdan oluÅŸan bir sÄ±nÄ±f kodu kullanÄ±n</li>
+                            <li>Geçerli bir hesap kullanýn</li>
+                            <li>Boþluk veya sembol içermeyen, 7 harf veya rakamdan oluþan bir sýnýf kodu kullanýn</li>
                         </ul>
                         <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-outline-primary me-2">Ä°ptal</button>
-                            <button type="submit" class="btn btn-primary" id="joinButton" disabled>KatÄ±l</button>
+                            <button type="button" class="btn btn-outline-primary me-2">Ýptal</button>
+                            <button type="submit" class="btn btn-primary" id="joinButton" disabled>Katýl</button>
                         </div>
                     </form>
                 </div>
