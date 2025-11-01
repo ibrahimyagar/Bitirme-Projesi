@@ -1,17 +1,62 @@
-**/.git
-**/.vs
-**/.vscode
-**/bin
-**/obj
-**/node_modules
-**/.dockerignore
-**/Dockerfile
-**/docker-compose.yml
-**/.env
-**/.env.local
-**/README.md
-**/LICENSE
-**/CHANGELOG.md
-**/*.md
-**/.github
+## Build results
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
 
+## Visual Studio
+.vs/
+*.user
+*.suo
+
+## User-specific files
+*.rsuser
+*.userprefs
+
+## Node modules
+node_modules/
+
+## Logs
+logs/
+*.log
+
+## Environment variables
+.env
+.env.local
+.env.*.local
+
+## Git
+.git/
+.gitignore
+.gitattributes
+
+## Documentation
+docs/
+*.md
+!README.md
+
+## Docker
+docker/
+docker-compose*.yml
+Dockerfile*
+
+## IDE
+.idea/
+.vscode/
+*.sln.iml
+
+## OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+## NuGet
+*.nupkg
+*.snupkg
+**/packages/*
+
+## Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup

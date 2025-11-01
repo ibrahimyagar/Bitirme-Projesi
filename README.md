@@ -140,28 +140,99 @@ ConnectionStrings__DefaultConnection=YOUR_CONNECTION_STRING
 ## 📁 Proje Yapısı
 
 ```
-Classroom/
-├── Areas/
-│   └── Identity/          # ASP.NET Core Identity sayfaları
-├── Controllers/            # MVC Controller'ları
-│   ├── ClassroomController.cs
-│   ├── HomeworkController.cs
-│   ├── CommentController.cs
-│   └── HomeController.cs
-├── Data/
-│   ├── ApplicationDbContext.cs
-│   └── Migrations/        # Entity Framework migrations
-├── Models/                 # Veri modelleri
-│   ├── ApplicationUser.cs
-│   ├── ClassRoom.cs
-│   ├── Homework.cs
-│   ├── Announcements.cs
-│   └── ...
-├── Views/                  # Razor view dosyaları
-├── ViewModels/             # View modelleri
-├── wwwroot/                # Statik dosyalar (CSS, JS, resimler)
-├── Program.cs              # Uygulama giriş noktası
-└── appsettings.json        # Yapılandırma dosyası
+Bitirme-Projesi/
+│
+├── 📁 .github/                    # GitHub workflows ve şablonlar
+│   ├── workflows/
+│   │   └── ci.yml                 # CI/CD pipeline
+│   └── ISSUE_TEMPLATE/            # Issue ve PR şablonları
+│
+├── 📁 Areas/                      # ASP.NET Core Identity
+│   └── Identity/
+│       └── Pages/
+│           ├── Account/            # Kimlik doğrulama sayfaları
+│           └── Manage/             # Hesap yönetimi sayfaları
+│
+├── 📁 Controllers/                 # MVC Controllers
+│   ├── ClassroomController.cs      # Sınıf yönetimi
+│   ├── CommentController.cs        # Yorum işlemleri
+│   ├── HelloController.cs          # Test sayfaları
+│   ├── HomeController.cs           # Ana sayfa ve sınıf oluşturma
+│   ├── HomeworkController.cs       # Ödev yönetimi
+│   └── WebRtcHub.cs                # WebRTC hub
+│
+├── 📁 Data/                       # Entity Framework Core
+│   ├── ApplicationDbContext.cs    # Veritabanı context
+│   └── Migrations/                 # Veritabanı migration'ları
+│
+├── 📁 Models/                     # Entity Models
+│   ├── Announcements.cs            # Duyurular
+│   ├── ApplicationUser.cs          # Kullanıcı modeli
+│   ├── Class_User.cs              # Sınıf-Kullanıcı ilişkisi
+│   ├── ClassRoom.cs                # Sınıf modeli
+│   ├── Comment.cs                  # Yorum modeli
+│   ├── ErrorViewModel.cs           # Hata görünüm modeli
+│   ├── Homework.cs                 # Ödev modeli
+│   ├── Homework_User.cs            # Ödev-Kullanıcı ilişkisi
+│   └── TeacherRating.cs            # Öğretmen değerlendirme
+│
+├── 📁 ViewModels/                 # View Models
+│   └── JoinClassRoomModel.cs       # Sınıfa katılma modeli
+│
+├── 📁 Views/                      # Razor Views
+│   ├── Classroom/                  # Sınıf görünümleri
+│   ├── Hello/                      # Test sayfaları
+│   ├── Home/                       # Ana sayfa görünümleri
+│   ├── Homework/                   # Ödev görünümleri
+│   ├── Shared/                     # Paylaşılan layout'lar
+│   ├── _ViewImports.cshtml
+│   └── _ViewStart.cshtml
+│
+├── 📁 wwwroot/                    # Statik Dosyalar
+│   ├── css/                        # Stil dosyaları
+│   │   └── style.css
+│   ├── js/                         # JavaScript dosyaları
+│   │   └── script.js
+│   ├── images/                     # Proje görselleri
+│   ├── lib/                        # 3. parti kütüphaneler
+│   │   ├── bootstrap/              # Bootstrap CSS framework
+│   │   ├── jquery/                  # jQuery kütüphanesi
+│   │   ├── jquery-validation/      # Form doğrulama
+│   │   └── jquery-validation-unobtrusive/
+│   ├── uploads/                    # Kullanıcı yüklemeleri (.gitignore'da)
+│   └── favicon.ico
+│
+├── 📁 Properties/                 # Proje özellikleri
+│   ├── launchSettings.json         # Launch ayarları
+│   └── serviceDependencies.json
+│
+├── 📁 docs/                       # 📚 Dokümantasyon
+│   ├── BELGELER_OZET.md
+│   ├── DUZENLEME_OZET.md
+│   ├── GITHUB_YUKLEME_ADIMLARI.md
+│   ├── ONERILEN_KLASOR_YAPISI.md
+│   ├── PROJE_ANALIZ_RAPORU.md
+│   └── PROJE_YAPISI_DUZENLEME_PLANI.md
+│
+├── 📁 docker/                     # 🐳 Docker yapılandırması
+│   ├── Dockerfile                 # Docker image tanımı
+│   └── docker-compose.yml         # Docker Compose yapılandırması
+│
+├── 📄 .dockerignore               # Docker ignore kuralları
+├── 📄 .gitattributes              # Git attributes
+├── 📄 .gitignore                  # Git ignore kuralları
+├── 📄 CHANGELOG.md                # Versiyon geçmişi
+├── 📄 CODE_OF_CONDUCT.md          # Davranış kuralları
+├── 📄 CONTRIBUTING.md             # Katkı rehberi
+├── 📄 LICENSE                     # MIT Lisansı
+├── 📄 openapi.yaml                # API dokümantasyonu
+├── 📄 README.md                   # Ana dokümantasyon
+├── 📄 SECURITY.md                 # Güvenlik politikası
+├── 📄 appsettings.json            # Uygulama ayarları
+├── 📄 appsettings.Development.json
+├── 📄 Classroom.csproj            # Proje dosyası
+├── 📄 Classroom.sln               # Solution dosyası
+└── 📄 Program.cs                  # Uygulama giriş noktası
 ```
 
 ## 🗄️ Veritabanı Şeması
@@ -199,10 +270,17 @@ Veritabanı migration'larını test veritabanına uygulayın ve testleri çalı�
 
 ## 🐳 Docker ile Çalıştırma
 
-Docker kullanarak uygulamayı çalıştırmak için `docker-compose.yml` dosyasını kullanabilirsiniz:
+Docker kullanarak uygulamayı çalıştırmak için `docker/` klasöründeki `docker-compose.yml` dosyasını kullanabilirsiniz:
 
 ```bash
-docker-compose up -d
+cd docker
+docker-compose -f docker-compose.yml up -d
+```
+
+Veya kök dizinden:
+
+```bash
+docker-compose -f docker/docker-compose.yml up -d
 ```
 
 Detaylar için [Docker bölümüne](#docker) bakın.

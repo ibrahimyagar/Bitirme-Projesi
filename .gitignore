@@ -21,31 +21,17 @@ bld/
 *.user
 *.userosscache
 *.sln.docstates
+*.csproj.user
 
 ## User-specific files
 *.rsuser
 *.userprefs
 
-## Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-[Ww][Ii][Nn]32/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-[Ll]ogs/
-
 ## .NET Core
 project.lock.json
 project.fragment.lock.json
 artifacts/
+*.dotCover
 
 ## NuGet Packages
 *.nupkg
@@ -53,7 +39,8 @@ artifacts/
 **/packages/*
 !**/packages/build/
 *.nuget.props
-*.nuget.targets
+*.nuget.g.targets
+*.nuget.g.props
 
 ## ASP.NET Scaffolding
 ScaffoldingReadMe.txt
@@ -92,9 +79,13 @@ ScaffoldingReadMe.txt
 .env.local
 .env.*.local
 
-## Uploads (production'da dikkatli olun)
-# wwwroot/uploads/*
-# Sadece örnek dosyaları commit edin, gerçek kullanıcı dosyalarını değil
+## Uploads - kullanıcı yüklediği dosyalar
+wwwroot/uploads/*
+!wwwroot/uploads/.gitkeep
+
+## Node modules
+node_modules/
+package-lock.json
 
 ## Rider
 .idea/
@@ -108,3 +99,31 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 
+## Visual Studio Code
+.vscode/
+
+## Azure Functions
+local.settings.json
+
+## AppSettings - hassas bilgiler (production için ayrı tutulmalı)
+# appsettings.Production.json
+
+## Backup files
+*.bak
+*.backup
+*~
+
+## Temporary files
+*.tmp
+*.temp
+
+## JetBrains Rider
+.idea/
+*.sln.iml
+
+## Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
