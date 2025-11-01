@@ -230,7 +230,7 @@ Bilinen sorunlar ve gelecek geliştirmeler için [CHANGELOG.md](CHANGELOG.md) do
 
 ## 📞 İletişim ve Destek
 
-Sorularınız veya önerileriniz için lütfen bir [Issue](https://github.com/YOUR_USERNAME/Classroom/issues) oluşturun.
+Sorularınız veya önerileriniz için lütfen bir [Issue](https://github.com/ibrahimyagar/Bitirme-Projesi/issues) oluşturun.
 
 ## 🙏 Teşekkürler
 
